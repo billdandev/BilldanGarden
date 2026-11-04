@@ -12,7 +12,7 @@ builder.WebHost.UseStaticWebAssets();
 builder.Services.AddBlazorStaticService(opt => {
     //opt. //check to change the defaults
 
-    opt.ShouldGenerateSitemap = true; //add this if you want sitemap.xml to be genedated
+    // opt.ShouldGenerateSitemap = true; //add this if you want sitemap.xml to be genedated
     opt.SiteUrl = "https://billdandev.github.io/BilldanGarden"; //add your url
     opt.SitemapOutputFolderPath = "output";    // write to the folder that gets deployed
 

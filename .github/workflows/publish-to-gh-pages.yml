@@ -29,6 +29,19 @@ jobs:
         run: |
           dotnet run --project ${{ env.WEBAPP_PATH }}${{env.WEBAPP_CSPROJ}}  --configuration Release
 
+      - name: Create sitemap.xml
+        run: |
+          cat > output/sitemap.xml <<'EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.w3.org/2000/09/xmlns">
+            <url><loc>https://billdandev.github.io/BilldanGarden/</loc></url>
+            <url><loc>https://billdandev.github.io/BilldanGarden/blog/first-post</loc></url>
+            <url><loc>https://billdandev.github.io/BilldanGarden/blog/second-post</loc></url>
+            <url><loc>https://billdandev.github.io/BilldanGarden/tags/tag-001</loc></url>
+            <url><loc>https://billdandev.github.io/BilldanGarden/tags/another-sample-tag</loc></url>
+          </urlset>
+          EOF
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
