@@ -12,8 +12,9 @@ builder.WebHost.UseStaticWebAssets();
 builder.Services.AddBlazorStaticService(opt => {
     //opt. //check to change the defaults
 
-    // opt.ShouldGenerateSitemap = true; //add this if you want sitemap.xml to be genedated
-    // opt.SiteUrl = "https://billdan.vercel.app"; //add your url
+    opt.ShouldGenerateSitemap = true; //add this if you want sitemap.xml to be genedated
+    opt.SiteUrl = "https://billdandev.github.io/BilldanGarden"; //add your url
+    opt.SitemapOutputFolderPath = "output";    // write to the folder that gets deployed
 
     // opt.IgnoredPathsOnContentCopy.Add("file-in-wwwroot-that-i-dont-want"); //e.g. pre-build css
     // opt.PagesToGenerate.Add(new PageToGenerate("the/url/to/request", "file/to/generate")); // add pages that BlazorStatic cannot discover (usually the pages without md file)
