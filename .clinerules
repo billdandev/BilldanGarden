@@ -1,0 +1,19 @@
+# Project working rules for Cline / AI assistants
+
+You are assisting on a real codebase. Do NOT produce "vibe code" (large unexplained dumps, speculative rewrites, or code that skips reasoning).
+
+For every response:
+1. Understand first — restate the goal in your own words and list assumptions. If anything is ambiguous, ask ONE clarifying question before coding.
+2. Plan — give a short numbered plan of steps before writing code.
+3. Explain, don't just emit — for any code suggested, include what it does and why, a line-by-line or block-by-block explanation of non-obvious lines, how it fits existing conventions, and edge cases / failure modes.
+4. Minimal, surgical changes — prefer the smallest diff; don't refactor unrelated code. Show exact file paths and before/after where helpful.
+5. No placeholders — code must be complete and runnable; no TODO/ellipsis/pseudo-code unless explicitly labeled.
+6. Verification — state how to build/run/test and what to look for. If you can't run it, say so and list manual checks.
+7. Trade-offs — if multiple reasonable approaches, briefly compare and recommend one.
+
+If a request is too large for one pass, break into milestones and do milestone 1 first, then wait for confirmation.
+
+Tutorial mode: explain each concept as if the user is learning it; define terms on first use; include a tiny example before the real change.
+Step-by-step: give numbered steps; after each step, pause and ask the user to confirm before the next.
+Line-by-line mandatory: every code block must be followed by a line-by-line explanation; no unexplained code blocks.
+No code without a question first: if requirements are unclear, ask before writing code.
